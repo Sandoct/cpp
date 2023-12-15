@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:01:22 by r                 #+#    #+#             */
-/*   Updated: 2023/11/08 15:03:20 by r                ###   ########.fr       */
+/*   Updated: 2023/12/12 11:07:01 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void    Contact::summary(int index) const
 {
 	if (this->_f_name.empty() || this->_l_name.empty() || this->_n_name.empty())
 		return ;
-    std::cout << "|" << std::setw(10) << index << std::flush;
+    std::cout << "|" << std::setw(10) << index + 1 << std::flush;
 	if (this->_f_name.length() > 10)
     	std::cout << "|" << this->_f_name.substr(0, 9) + "." << std::flush;
 	else

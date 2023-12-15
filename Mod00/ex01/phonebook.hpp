@@ -6,7 +6,7 @@
 /*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:23:19 by gpouzet           #+#    #+#             */
-/*   Updated: 2023/11/07 16:00:09 by r                ###   ########.fr       */
+/*   Updated: 2023/12/15 16:00:28 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 
 class	PhoneBook {
 
-public :
+private:
 	Contact	_contacts[8];
+
+public :
 
 	void	add_contact(void);
 	void	search_contact(void);

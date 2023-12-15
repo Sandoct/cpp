@@ -6,7 +6,7 @@
 #    By: r <marvin@42.fr>                           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 13:29:42 by r                 #+#    #+#              #
-#    Updated: 2023/11/07 15:45:17 by r                ###   ########.fr        #
+#    Updated: 2023/12/12 11:11:56 by gpouzet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC		= contact.cpp phonebook.cpp
 
 CC		= c++
 
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 
 OBJS	= $(SRC:.c=.o)
 
