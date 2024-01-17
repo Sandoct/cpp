@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:01:22 by r                 #+#    #+#             */
-/*   Updated: 2023/12/12 11:07:01 by gpouzet          ###   ########.fr       */
+/*   Updated: 2024/01/17 15:57:25 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ std::string Contact::_input(std::string str) const
     {
         std::cout << str << std::endl;
         std::getline(std::cin, input);
+		if (std::cin.eof())
+			break;
         if (std::cin.good() && !input.empty())
             valid = 0;
         else {
