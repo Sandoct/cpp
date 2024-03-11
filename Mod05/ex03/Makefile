@@ -6,13 +6,14 @@
 #    By: r <marvin@42.fr>                           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 13:29:42 by r                 #+#    #+#              #
-#    Updated: 2024/02/26 14:56:04 by r                ###   ########.fr        #
+#    Updated: 2024/02/26 16:57:56 by r                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= Office
 
-SRC		= main.cpp Bureaucrat.cpp
+SRC		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+		  RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp\
 
 CC		= c++
 
