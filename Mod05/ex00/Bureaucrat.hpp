@@ -6,12 +6,12 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:01:06 by r                 #+#    #+#             */
-/*   Updated: 2023/11/24 14:21:29 by r                ###   ########.fr       */
+/*   Updated: 2024/03/11 14:55:30 by r                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
-# define BUREAUCRAFT_HPP
+# define BUREAUCRAT_HPP
 # include "iostream"
 
 class	Bureaucrat
