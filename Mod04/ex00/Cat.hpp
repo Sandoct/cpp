@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:27:19 by r                 #+#    #+#             */
-/*   Updated: 2023/11/23 13:43:39 by r                ###   ########.fr       */
+/*   Updated: 2024/01/31 16:09:29 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ class	Cat: public Animal
 {
 	public:
 		Cat();
+		Cat( const Cat &src );
+		Cat	&operator=( const Cat &src );
 		~Cat();
 
 		void	makeSound() const;

@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:11:07 by r                 #+#    #+#             */
-/*   Updated: 2023/11/15 17:38:47 by r                ###   ########.fr       */
+/*   Updated: 2024/01/23 15:38:12 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	main(void)
 	{
 		std::cout << "level : ";
 		std::cin >> input;
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			break;
+		}
 		if (!input.compare("EXIT"))
 			break ;
 		harl.complain(input);

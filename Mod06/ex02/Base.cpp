@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
+/*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:43:52 by r                 #+#    #+#             */
-/*   Updated: 2024/01/23 15:09:07 by gpouzet          ###   ########.fr       */
+/*   Created: 2024/03/12 10:54:46 by gpouzet           #+#    #+#             */
+/*   Updated: 2024/03/12 10:55:17 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Base.hpp"
 
-Zombie	*newZombie( std::string name )
+Base::~Base()
 {
-	Zombie	*z = new Zombie();
-	z->setName(name);
-	return (z);
+	std::cout << "Base destructor called" << std::endl;
 }

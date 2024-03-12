@@ -6,12 +6,12 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:00:51 by r                 #+#    #+#             */
-/*   Updated: 2023/11/23 14:12:55 by r                ###   ########.fr       */
+/*   Updated: 2024/02/01 11:02:47 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
-# define WRONGANIMALS_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
 
 class	WrongAnimal
@@ -22,8 +22,8 @@ class	WrongAnimal
 	public:
 		WrongAnimal();
 		WrongAnimal( const WrongAnimal &src );
-		~WrongAnimal();
 		WrongAnimal	&operator=( const WrongAnimal &src );
+		virtual ~WrongAnimal();
 
 		void	makeSound() const;
 		std::string	getType() const;

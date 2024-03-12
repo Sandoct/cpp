@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
+/*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:11:13 by r                 #+#    #+#             */
-/*   Updated: 2024/01/31 17:51:04 by gpouzet          ###   ########.fr       */
+/*   Created: 2024/03/12 10:12:29 by gpouzet           #+#    #+#             */
+/*   Updated: 2024/03/12 10:40:11 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "serializer.hpp"
 
-int	main(void)
+int	main()
 {
-	std::string	input;
-
-	std::cout << "name" << std::endl;
-	std::cin >> input;
-	Zombie	*z_heap = newZombie(input);
-	z_heap->announce();
-	delete z_heap;
-
-	std::cout << "name" << std::endl;
-	std::cin >> input;
-	randomChump(input);
+	Data	ptr;
+	ptr.data = "test";
+	ptr.next = NULL;
+	
+	std::cout << "Original adress :\t" << &ptr << std::endl;
+	uintptr_t	serialized_ptr = serializer::serialize(&ptr);
+	std::cout << "serialized address :\t" << &ptr << std::endl;
+	Data	*ptr2 = serializer::deserialize(serialized_ptr);
+	std::cout << "deserialize address :\t" << ptr2 << std::endl;
 	return (0);
 }

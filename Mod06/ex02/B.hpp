@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
+/*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:43:52 by r                 #+#    #+#             */
-/*   Updated: 2024/01/23 15:09:07 by gpouzet          ###   ########.fr       */
+/*   Created: 2024/03/12 10:51:46 by gpouzet           #+#    #+#             */
+/*   Updated: 2024/03/12 11:52:01 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef B_HPP
+# define B_HPP
+# include <iostream>
+# include "Base.hpp"
 
-Zombie	*newZombie( std::string name )
+// Class definition
+class B : public Base
 {
-	Zombie	*z = new Zombie();
-	z->setName(name);
-	return (z);
-}
+	private:
+ 
+	public:
+}; 
+ 
+#endif

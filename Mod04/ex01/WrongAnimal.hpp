@@ -6,12 +6,12 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:00:51 by r                 #+#    #+#             */
-/*   Updated: 2023/11/23 14:12:55 by r                ###   ########.fr       */
+/*   Updated: 2024/01/17 17:00:54 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
-# define WRONGANIMALS_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
 
 class	WrongAnimal

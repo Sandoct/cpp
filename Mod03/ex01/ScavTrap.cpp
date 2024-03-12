@@ -6,11 +6,19 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:28:26 by r                 #+#    #+#             */
-/*   Updated: 2023/11/21 16:21:52 by r                ###   ########.fr       */
+/*   Updated: 2024/01/31 14:53:13 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	std::cout << "ScavTrap constructor called" << std::endl;
+	this->_hitpoint = 100;
+	this->_energy = 50;
+	this->_attack = 20;
+}
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
@@ -18,6 +26,22 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 	this->_hitpoint = 100;
 	this->_energy = 50;
 	this->_attack = 20;
+}
+
+ScavTrap::ScavTrap( const ScavTrap &src )
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
+}
+
+ScavTrap	&ScavTrap::operator=( const ScavTrap &src )
+{
+	std::cout << "Copy assignement operator called" << std::endl;
+	this->_name = src._name;
+	this->_hitpoint = src._hitpoint;
+	this->_energy = src._energy;
+	this->_attack = src._attack;
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

@@ -6,7 +6,7 @@
 #    By: r <marvin@42.fr>                           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 13:29:42 by r                 #+#    #+#              #
-#    Updated: 2023/11/17 09:40:38 by r                ###   ########.fr        #
+#    Updated: 2024/01/24 13:38:53 by gpouzet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,21 @@ CC		= c++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-OBJS	= $(SRC:.c=.o)
+OBJS	= $(SRC:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME) $(OBJS)
 
-%.o: %.c
+%.o: %.cpp
 		$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(NAME)
+	@rm -rf $(OBJS)
 
 fclean: clean
+	@rm -rf $(NAME)
 
 re: fclean all
 

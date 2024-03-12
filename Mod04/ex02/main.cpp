@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:11:38 by r                 #+#    #+#             */
-/*   Updated: 2023/11/23 16:27:37 by r                ###   ########.fr       */
+/*   Updated: 2024/02/01 11:58:20 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 
 int	main()
 {
+	const WrongAnimal		*meta = new WrongAnimal();
 	const Animal		*j = new Dog();
 	const Animal		*i = new Cat();
 
+	delete	meta;
 	delete	i;
 	delete	j;
 

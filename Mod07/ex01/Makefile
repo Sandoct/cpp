@@ -6,13 +6,13 @@
 #    By: r <marvin@42.fr>                           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 13:29:42 by r                 #+#    #+#              #
-#    Updated: 2024/03/12 10:25:33 by gpouzet          ###   ########.fr        #
+#    Updated: 2024/03/11 18:06:58 by r                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= serializer
+NAME	= convert
 
-SRC		= main.cpp serializer.cpp
+SRC		= main.cpp converter.cpp
 
 CC		= c++
 

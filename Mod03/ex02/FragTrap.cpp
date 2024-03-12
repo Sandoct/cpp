@@ -6,18 +6,42 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:11:29 by r                 #+#    #+#             */
-/*   Updated: 2023/11/21 16:30:15 by r                ###   ########.fr       */
+/*   Updated: 2024/01/31 14:59:54 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( std::string name ) : ClapTrap(name)
+FragTrap::FragTrap() : ClapTrap()
 {
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "FragTrap constructor called" << std::endl;
 	this->_hitpoint = 100;
 	this->_energy = 100;
 	this->_attack = 30;
+}
+
+FragTrap::FragTrap( std::string name ) : ClapTrap(name)
+{
+	std::cout << "FragTrap constructor called" << std::endl;
+	this->_hitpoint = 100;
+	this->_energy = 100;
+	this->_attack = 30;
+}
+
+FragTrap::FragTrap( const FragTrap &src )
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
+}
+
+FragTrap	&FragTrap::operator=( const FragTrap &src )
+{
+	std::cout << "Copy assignement operator called" << std::endl;
+	this->_name = src._name;
+	this->_hitpoint = src._hitpoint;
+	this->_energy = src._energy;
+	this->_attack = src._attack;
+	return (*this);
 }
 
 FragTrap::~FragTrap()

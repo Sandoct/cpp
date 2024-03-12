@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:28:37 by r                 #+#    #+#             */
-/*   Updated: 2023/11/23 13:58:46 by r                ###   ########.fr       */
+/*   Updated: 2024/02/01 11:51:33 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,20 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat constuctor called" << std::endl;
 }
 
+WrongCat::WrongCat( const WrongCat &src )
+{
+	std::cout << "WrongCat copy constuctor called" << std::endl;
+	*this = src; 
+}
+
+WrongCat	&WrongCat::operator=( const WrongCat &src )
+{
+	std::cout << "Copy assignement operator called" << std::endl;
+	if (this != &src)
+		this->_type = src._type;
+	return (*this);
+}
+
 WrongCat::~WrongCat()
 {
 	std::cout << "WrongCat destuctor called" << std::endl;
@@ -25,5 +39,5 @@ WrongCat::~WrongCat()
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Miaou" << std::endl;
+	std::cout << "Woaf" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:46:30 by r                 #+#    #+#             */
-/*   Updated: 2024/01/17 15:57:23 by gpouzet          ###   ########.fr       */
+/*   Updated: 2024/01/19 16:04:34 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ PhoneBook::~PhoneBook()
 
 void    PhoneBook::add_contact(void)
 {
-    static int  i;
+    static int  i = 0;
 
     this->_contacts[i].new_contact();
     i++;
-	if (i > 8)
+	if (i > 7)
 		i = 0;
 }
 
@@ -41,7 +41,7 @@ void    PhoneBook::search_contact(void)
 	std::cout << "|             index 0 to leave              |" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-	for	(int i = 0; i < 7; i++)
+	for	(int i = 0; i < 8; i++)
 		this->_contacts[i].summary(i);
 	while (1)
     {

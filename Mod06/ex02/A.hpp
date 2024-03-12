@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
+/*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 22:15:05 by r                 #+#    #+#             */
-/*   Updated: 2024/03/11 22:16:57 by r                ###   ########.fr       */
+/*   Created: 2024/03/12 10:49:06 by gpouzet           #+#    #+#             */
+/*   Updated: 2024/03/12 11:50:44 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef A_HPP
+# define A_HPP
 # include <iostream>
-# include <string>
+# include "Base.hpp"
 
 // Class definition
-class Data
+class A : public Base
 {
 	private:
  
 	public:
-	// Constructor 
-		Data(); 
-		Data( const Data &rhs); 
-		~Data(); 
-		Data& operator=( const Data &rhs); 
-	// Getters 
-	// Setters 
-	// Output 
-		void output(); 
 }; 
  
 #endif

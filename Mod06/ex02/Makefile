@@ -6,13 +6,13 @@
 #    By: r <marvin@42.fr>                           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 13:29:42 by r                 #+#    #+#              #
-#    Updated: 2024/03/11 18:06:58 by r                ###   ########.fr        #
+#    Updated: 2024/03/12 11:50:11 by gpouzet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= convert
+NAME	= identifier
 
-SRC		= main.cpp converter.cpp
+SRC		= main.cpp Base.cpp
 
 CC		= c++
 
