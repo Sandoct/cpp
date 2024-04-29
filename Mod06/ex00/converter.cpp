@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:07:31 by r                 #+#    #+#             */
-/*   Updated: 2024/03/11 18:22:02 by r                ###   ########.fr       */
+/*   Updated: 2024/04/29 14:24:46 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,28 +58,17 @@ static void		convert_nan() {
 
 static void		convert_error() {
 	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: " << 0 << std::endl;
-	std::cout << "float: " << 0 << std::endl;
-	std::cout << "double: " << 0 << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: impossible" << std::endl;
+	std::cout << "double: impossible" << std::endl;
 }
 
 static void	convert_char(std::string conv)
 {
-		if (conv.length() == 1)
-		{
-			std::cout << "char: " << "'" << conv[0] << "'" << std::endl;
-			std::cout << "int: " << static_cast<int>(conv[0]) << std::endl;
-			std::cout << "float: " << static_cast<float>(conv[0]) << ".0f" << std::endl;
-			std::cout << "double: " << static_cast<double>(conv[0]) << ".0" << std::endl;
-		}
-		else if (conv == "-inf" || conv == "-inff")
-			convert_min();
-		else if (conv == "+inf" || conv == "+inff")
-			convert_max();
-		else if (conv == "nan" || conv == "nanf")
-			convert_nan();
-		else
-			convert_error();
+	std::cout << "char: " << "'" << conv[0] << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(conv[0]) << std::endl;
+	std::cout << "float: " << static_cast<float>(conv[0]) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(conv[0]) << ".0" << std::endl;
 }
 
 static void	convert_int(int conv)
@@ -126,14 +115,25 @@ static int	check_literal(std::string numb,unsigned int size)
 	unsigned int	i = -1;
 
 	while (++i < size)
+	{
+		if (i == 0 && numb[i] == '-')
+			i++;
 		if (!std::isdigit(numb[i]) && numb[i] != '.')
 			return (0);
+	}
 	return (1);
 }
 
 void	ScalarConverter::convert(const std::string literal)
 {
-	if (std::isprint(literal[0]) && !std::isdigit(literal[0]))
+	if (literal == "-inf" || literal == "-inff")
+		convert_min();
+	else if (literal == "+inf" || literal == "+inff")
+		convert_max();
+	else if (literal == "nan" || literal == "nanf")
+		convert_nan();
+	else if (std::isprint(literal[0]) && !std::isdigit(literal[0]) \
+			&& literal[0] != '-' && literal.length() == 1)
 		convert_char(literal);
 	else if (literal[literal.size() - 1] == 'f' && check_literal(literal, literal.size() - 1))
 		convert_float(atof(literal.c_str()));
