@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   serializer.hpp                                     :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 09:54:53 by gpouzet           #+#    #+#             */
-/*   Updated: 2024/04/29 15:30:31 by gpouzet          ###   ########.fr       */
+/*   Created: 2024/04/29 14:55:29 by gpouzet           #+#    #+#             */
+/*   Updated: 2024/04/29 15:49:39 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef	EASYFIND_HPP
+# define EASYFIND_HPP
 # include <iostream>
 # include <string>
-# include <stdint.h>
 
-typedef struct Data
+template<typename T>
+void	easyfind(T list, int find)
 {
-	std::string	data;
-	Data		*next;
-}				Data;
-
-// Class definition
-class serializer
+	for (int i = 0; i < list.length(); i++)
+	{
+		if (list[i] == find)
+			return (i);
+	}
+	throw no_find_exception()
+}
+class no_find_exception : public std::exception
 {
-	private:
-	// Constructor 
-		serializer(); 
-		serializer( const serializer &rhs); 
- 
 	public:
-		~serializer(); 
-		serializer& operator=( const serializer &rhs); 
-	// function
-		static uintptr_t	serialize(Data* ptr);
-		static Data		*deserialize(uintptr_t raw);
-}; 
- 
+		virtual const char *what() const throw()
+		{
+			return ("No occurrence is found.");
+		}
+}
 #endif

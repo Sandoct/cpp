@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:52:04 by r                 #+#    #+#             */
-/*   Updated: 2024/03/11 18:11:22 by r                ###   ########.fr       */
+/*   Updated: 2024/04/29 15:30:05 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 class	ScalarConverter
 {
 	private:
-	
-	public:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &src);
+	
+	public:
 		~ScalarConverter();
 		ScalarConverter	&operator=(const ScalarConverter &src);
 
