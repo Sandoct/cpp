@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:53:23 by r                 #+#    #+#             */
-/*   Updated: 2024/04/25 15:45:56 by r                ###   ########.fr       */
+/*   Updated: 2024/05/02 16:04:32 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main()
 		decimal[i] = i;
 		std::cout << decimal[i] << std::endl;
 	}
+	std::cout << "Array size : " << decimal.size() << std::endl;
 	std::cout << std::endl;
 	// Array out of bound//
 	std::cout << "trying index + 1" << std::endl;
@@ -55,6 +56,7 @@ int	main()
 		character[i] = i + 97;
 		std::cout << character[i] << std::endl;
 	}
+	std::cout << "Array size : " << character.size() << std::endl;
 	// Array out of bound//
 	std::cout << std::endl;
 	std::cout << "trying index + 1" << std::endl;
