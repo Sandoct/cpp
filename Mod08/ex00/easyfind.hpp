@@ -6,7 +6,7 @@
 /*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:55:29 by gpouzet           #+#    #+#             */
-/*   Updated: 2024/04/29 15:49:39 by gpouzet          ###   ########.fr       */
+/*   Updated: 2024/05/02 17:21:55 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	easyfind(T list, int find)
 		if (list[i] == find)
 			return (i);
 	}
-	throw no_find_exception()
+	throw NoFindException()
 }
-class no_find_exception : public std::exception
+class NoFindException : public std::exception
 {
 	public:
 		virtual const char *what() const throw()
