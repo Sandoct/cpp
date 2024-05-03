@@ -6,7 +6,7 @@
 /*   By: gpouzet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:55:29 by gpouzet           #+#    #+#             */
-/*   Updated: 2024/05/02 17:21:55 by gpouzet          ###   ########.fr       */
+/*   Updated: 2024/05/03 16:48:35 by gpouzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 # define EASYFIND_HPP
 # include <iostream>
 # include <string>
+# include <vector>
+# include <algorithm>
 
-template<typename T>
-void	easyfind(T list, int find)
-{
-	for (int i = 0; i < list.length(); i++)
-	{
-		if (list[i] == find)
-			return (i);
-	}
-	throw NoFindException()
-}
-class NoFindException : public std::exception
+class NoFoundException : public std::exception
 {
 	public:
 		virtual const char *what() const throw()
 		{
 			return ("No occurrence is found.");
 		}
+};
+
+template<typename T>
+void	easyfind(T& container, int find)
+{
+	typename T::iterator	it;
+	it = std::find(container.begin(), container.end(), find);
+	if (it != container.end())
+		std::cout << "Found : " << *it << std::endl;
+	else
+		throw NoFoundException();
 }
 #endif
