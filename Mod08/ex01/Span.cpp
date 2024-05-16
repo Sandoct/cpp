@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:05:06 by r                 #+#    #+#             */
-/*   Updated: 2024/05/15 19:28:11 by r                ###   ########.fr       */
+/*   Updated: 2024/05/16 18:25:00 by r                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Span::Span(): _size(0)
 	std::cout << "Span constructor called" << std::endl;
 }
 
-Span::Span( const Span& rhs): _size(rhs->_size)
+Span::Span( const Span& rhs): _size(rhs._size)
 {
 	std::cout << "Span copy constructor called" << std::endl;
 	*this = rhs;
@@ -26,7 +26,7 @@ Span::Span( const Span& rhs): _size(rhs->_size)
 
 Span::Span(size_t number) : _size(number)
 {
-	std::cout << "Span constructor called" << std::endl;
+	std::cout << "Span size " << number << " constructor called" << std::endl;
 	this->_vector.reserve(number);
 }
 
@@ -48,6 +48,19 @@ void	Span::addNumber(size_t number)
 	_vector.push_back(number);
 }
 
+void	Span::fillContainer()
+{
+	srand(time(NULL));
+	_vector.insert(_vector.begin(), _size, rand());
+}
+
+void	Span::show()
+{
+	for (size_t i = 0; i < this->_size; i++)
+		std::cout << this->_vector[i] << " ";
+	std::cout << std::endl;
+}
+
 size_t	Span::shortestSpan()
 {
 	size_t	span;
@@ -62,7 +75,6 @@ size_t	Span::shortestSpan()
 			span = _vector.at(i + 1) - _vector.at(i);
 	}
 	return (span);
-
 }
 
 size_t	Span::longestSpan()

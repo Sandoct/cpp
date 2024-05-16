@@ -6,7 +6,7 @@
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 17:25:57 by r                 #+#    #+#             */
-/*   Updated: 2024/05/15 18:49:57 by r                ###   ########.fr       */
+/*   Updated: 2024/05/16 18:05:37 by r                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include <string>
 # include <vector>
-# include <algoritm>
+# include <algorithm>
 
 // Class definition
 class Span
@@ -34,13 +34,15 @@ class Span
 		size_t	shortestSpan();
 		size_t	longestSpan();
 		void	addNumber(size_t number);
+		void	fillContainer();
+		void	show();
 	// Exception
 		class FullException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw()
 				{
-					return ("Already full.");
+					return ("Span already full.");
 				}
 		};
 		class TooShortException : public std::exception
