@@ -5,23 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: r <marvin@42.fr>                           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 14:58:23 by r                 #+#    #+#             */
-/*   Updated: 2024/05/20 20:46:51 by r                ###   ########.fr       */
+/*   Created: 2024/05/21 14:06:43 by r                 #+#    #+#             */
+/*   Updated: 2024/05/21 14:14:30 by r                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
 
 int	main(int argc, char** argv)
 {
-	if (argc != 2)
+	if (argc < 2)
 	{
-		std::cerr << "Invalid number of arguments." << std::endl;
-		return (1);
+		std::cout << "Error" << std::endl;
 	}
-	BitcoinExchange btc;
-	if (btc.HandleData("data.csv"))
-		return (1);
-	btc.MatchingValue(argv[1]);
-	return (0);
+	try
+    {
+        PmergeMe sortCompet(argv);
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+    return (0);
+
 }

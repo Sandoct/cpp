@@ -6,7 +6,7 @@
 #    By: r <marvin@42.fr>                           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 13:29:42 by r                 #+#    #+#              #
-#    Updated: 2024/05/17 14:59:54 by r                ###   ########.fr        #
+#    Updated: 2024/05/20 20:44:27 by r                ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC		= main.cpp BitcoinExchange.cpp
 
 CC		= c++
 
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 
 OBJS	= $(SRC:.cpp=.o)
 
